@@ -1,0 +1,12 @@
+Using float,while: 0.000000
+Using float, for-loop: 0.000000
+Using float, do-while: 0.000000
+Table value for float: 0.000000
+Using double,while:2.22045e-16
+Using double, for-loop: 2.22045e-16
+Using double, do-while: 1.11022e-16
+Table value for double: 2.22045e-16
+Using long double,while:1.0842e-19
+Using long double,for-loop: 1.0842e-19
+Using long double, do-while: 1.0842e-19
+Table value for double: 1.0842e-19
