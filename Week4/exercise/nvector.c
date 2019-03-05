@@ -26,14 +26,6 @@ double nvector_dot_product(nvector* v,nvector* u){
 	return w;
 }
 
-double nvector_add(nvector* v, nvector* u){
-	double q = nvector_alloc(v->size);
-	for(int j=0;i<v->size;i++){
-	q[i] = nvector_get(v,i) + nvector_get(u,i);
-	};
-	
-	return q;
-}
 
 
 

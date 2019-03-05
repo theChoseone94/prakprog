@@ -1,2 +1,3 @@
 Z is:1.656778
 Z is supposed to be: 1.656778
+Freeing vector a is passed
