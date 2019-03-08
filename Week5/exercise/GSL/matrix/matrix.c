@@ -41,10 +41,12 @@ double A_test_data[] = {	6.13, -2.90, 5.86,
 gsl_matrix_view A_test = gsl_matrix_view_array(A_test_data, 3, 3);
 
 
-double check[] = {0.00,0.00,0.00};
+double check[] = {0.00,0.00,0.00}; /** make a new vector, which is the result of A*x_found **/
 gsl_vector_view C = gsl_vector_view_array(check,3);
 gsl_blas_dgemv(CblasNoTrans,1.0,&A_test.matrix,x,0.0,&C.vector);
-printf("A*x is = \n %g \n %g \n %g \n",check[0],check[1],check[2]);
+/** calculate A*x. CblasNoTrans uses the ordinary A and not transposed A in the calculation. 1.0 is alpha in alpha * A *x and 0.0 is the beta in: alpha * A + beta * y. 
+**/ 
+printf("A*x is = \n %lg \n %lg \n %lg \n",check[0],check[1],check[2]);
 printf("b is = (6.23,5.37,2.29)\n");
 
 
@@ -52,5 +54,5 @@ printf("b is = (6.23,5.37,2.29)\n");
 
 gsl_permutation_free(p); /*free the two allocated vectors */
 gsl_vector_free(x);
-	return 0;
+	 return 0;
 }
