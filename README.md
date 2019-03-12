@@ -1,2 +1,2 @@
 #prakprog
-test
+ssh test
