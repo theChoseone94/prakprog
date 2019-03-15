@@ -1,0 +1,6 @@
+set terminal svg background 'white'
+set out "Energy_plot.svg"
+set xrange [0:1]
+set xlabel "Alpha"
+set ylabel "Energy"
+plot "out-integ.txt" using 1:2 title "Int. data points"
