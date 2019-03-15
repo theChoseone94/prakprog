@@ -2,7 +2,7 @@ CFLAGS = -Wall -std=gnu99 $$(gsl-config --cflags)
 LDLIBS = $$(gsl-config --libs)
 
 
-multiroot-out.txt:main
+multiroot-out.txt:main Makefile
 	./main > $@
 
 main: main.c

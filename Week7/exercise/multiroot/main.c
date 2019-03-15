@@ -22,16 +22,17 @@ int rosenbrock_func(const gsl_vector * x, void * params, gsl_vector * f) {
 	const double x0 = gsl_vector_get(x,0);
 	const double x1 = gsl_vector_get(x,1);
 
-	/*so the first part of the eq: a * (1-x)^2 and the second part of the eq: b * (y - x^2)^2 */
-	const double y0 = a * (1-x0)*(1-x0);
-	const double y1 = b * (x1 - x0*x0)*(x1-x0*x0);
+	/*so the first part of the eq: a * (1-x0)^2 and the second part of the eq: b * (x1 - x0^2)^2.
+	 * I find the gradient of this and plug it in */
+	const double y0 = a*2*x0-2+b*(4*x0*x0*x0 - 4*x0*x1);
+	const double y1 = b*(2*x1-2*x0*x0);
 	
 	gsl_vector_set(f,0,y0);
 	gsl_vector_set(f,1,y1);
 
 return GSL_SUCCESS;
 }
-
+/*print the state and iterations*/
 int print_state(size_t iter, gsl_multiroot_fsolver *s){
 	printf("iter = %3u x = % .3f % .3f "
 			"f(x) = %.3f %.3e \n",
@@ -41,10 +42,6 @@ int print_state(size_t iter, gsl_multiroot_fsolver *s){
 			gsl_vector_get(s->f,0),
 			gsl_vector_get(s->f,1));
 }
-
-
-
-
 
 int main(void){
 
@@ -60,7 +57,7 @@ int main(void){
 	gsl_multiroot_function f = {&rosenbrock_func,n,&p};
 	
 	/* setting up initial guess on the solution (1,1) */
-	double x_init[2]= {1,1};
+	double x_init[2]= {0.5,0.5};
 	gsl_vector *x = gsl_vector_alloc(n);
 
 	gsl_vector_set(x,0,x_init[0]);
