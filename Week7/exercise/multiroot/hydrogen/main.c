@@ -29,8 +29,7 @@ int main(){
 	Func.params=&r_max;
 
 	gsl_vector *initial=gsl_vector_alloc(1);
-	gsl_vector_set(initial,0,-1);
-
+	gsl_vector_set(initial,0,2);
 	gsl_multiroot_fsolver_set(SOLVE,&Func,initial);
 
 	int status;

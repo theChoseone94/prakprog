@@ -41,8 +41,4 @@ double Fe(double e, double r){
 	
 	return y[0];
 
-	
-
-
-
 }
