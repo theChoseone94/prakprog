@@ -1,9 +1,15 @@
-CFLAGS = -Wall -std=gnu99 -pthread
-LDLIBS = -lm -lpthread
+CFLAGS = -Wall -std=gnu99 -pthread -fopenmp -lgomp
+LDLIBS = -lm -lpthread 
 
 
+default:pthread-out.txt openmp-out.txt
 
-main-out.txt: main Makefile
+openmp-out.txt: open Makefile
+	./open > $@
+
+open:open.c
+
+pthread-out.txt: main Makefile
 	./main > $@
 
 
@@ -11,4 +17,4 @@ main: main.c
 
 
 clean:
-	$(RM) main main-out.txt
+	$(RM) open main main-out.txt openmp-out.txt
