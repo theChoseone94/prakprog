@@ -1,10 +1,10 @@
-set terminal svg background 'white'
-set out "Error_plot.svg"
+set terminal pdf background 'white'
+set out "Error_plot.pdf"
 set grid
 set yrange[-1:1]
 set xrange[-3:3]
 set xlabel "x"
-set ylabel "Error(x)"
+set ylabel "y"
 set key left top
 plot "main-out.txt" with lines title "Errorfunction(x)" lc rgb "red" 
 

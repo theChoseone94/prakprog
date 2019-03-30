@@ -4,7 +4,15 @@ PARAMETERS =  -3 3 0.01
 
 .PHONEY: all clean
 
-default:main-out.txt plot
+
+
+default:main-out.txt plot latex
+
+
+latex: main.tex plot
+	pdflatex main.tex
+	pdflatex main.tex
+
 
 plot:plot.gpi
 	gnuplot plot.gpi
@@ -16,4 +24,4 @@ main: main.c
 
 
 clean:
-	$(RM) main main-out.txt Error_plot.svg
+	$(RM) main main-out.txt Error_plot.pdf main.pdf main.aux main.log 
