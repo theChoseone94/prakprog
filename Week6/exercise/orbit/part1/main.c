@@ -27,7 +27,7 @@ int main(int argc, char** argv){
 	gsl_odeiv2_driver *driver =
 	       	gsl_odeiv2_driver_alloc_y_new(&orbit,gsl_odeiv2_step_rk8pd,start,epsabs,epsreal);
 
-	double t = 0, y[2] = {1,uprime};
+	double t = 0, y[2] = {0.5,uprime};
 	for(double phi = 0;phi<phi_max;phi += delta_phi) {
 		int status=gsl_odeiv2_driver_apply(driver,&t,phi,y);
 		printf("%g %g\n", phi,y[0]);
