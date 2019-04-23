@@ -17,7 +17,6 @@ def BinarySearch(x,z):
         elif x[mid]>z:
             last=mid-1
         mid=floor((first+last)/2.)
-        print(mid)
     return mid
 
 
@@ -45,21 +44,33 @@ def linterp_integ(x:list,y:list,z:float):
         b=y[i]-a*x[i]
         integ=1/2*a*(x[i+1]**2 - x[i]**2)+b*(x[i+1]**2-x[i]**2)
         return integ
-
-xlist=list(range(1,11))
-ylist=[1, 2,4,8,16,32,40,44,46,47 ]
+"Create list of points x,y and z, with z being inbetween minimum(x) and maximum(x)"
+xlist=list(range(0,11))
+ylist=[1,2,3,4,5,6,7,8,9,10,11 ]
 zlist=[(min(xlist)+random.random()*max(xlist)-min(xlist)) for i in range(50)]
 zlist.sort()
+"New points from interpolation saved in yz and area from integral is saved in Area "
 yz=[]
-At=[]
+Area=[]
 for i in range(len(zlist)):
     yl,_=linterp(xlist,ylist,zlist[i])
     yz +=[yl]
     Al=linterp_integ(xlist,ylist,zlist[i])
-    At +=[Al]
+    Area +=[Al]
 
-plt.figure
-plt.plot(zlist,yz,'r.',xlist,ylist,'b*')
-plt.show() 
+"Plot figures"
+f = plt.figure(figsize=(10,4))
+
+ax1=f.add_subplot(121)
+plt.grid("true") 
+plt.xlabel("x")
+plt.ylabel("y")
+ax1.plot(zlist,yz,'r.',xlist,ylist,'b*')
+plt.xlim(-1,11)
     
-    
+ax2=f.add_subplot(122)
+plt.xlabel("x") 
+plt.ylabel("Area")
+plt.grid("true")
+ax2.plot(zlist,Area,'r.')
+plt.savefig('LinearInterpolation.png')
