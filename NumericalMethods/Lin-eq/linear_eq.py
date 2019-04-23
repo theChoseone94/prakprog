@@ -102,7 +102,20 @@ def qr_gs_solve(Q:matrix,R:matrix,b:list):
                 
         return x
             
-            
+def qr_gs_inverse(Q:matrix,R:matrix):
+    R_inverse = matrix(R.size1,R.size2)
+    for i in range(R.size2-1,-1,-1):
+        R_inverse[i,i] = 1/R[i,i]
+        for l in range(i+1,R.size2):
+            R_inverse[i,l] /= R[i,i]
+        for j in range(i-1,-1,-1):
+            for l in range(i,R.size2):
+                R_inverse[j,l] -= R[j,i]*R_inverse[i,l]
+    B = multiply_matrix(R_inverse,transpose_matrix(Q))
+    
+    return B
+
+
         
 
 

@@ -3,7 +3,7 @@ from linear_eq import *
 import random
 
 
-def TASK1():
+def TASKA1():
         print('This is task #1')
         A=matrix(4,3)
         data=np.random.rand(4,3)*4
@@ -21,7 +21,7 @@ def TASK1():
         print("A is:")
         A.show()
         
-def TASK2():
+def TASKA2():
     print("This is task #2")
     A=matrix(3,3)
     data=np.random.rand(3,3)*4
@@ -54,3 +54,36 @@ def TASK2():
     print("\n b is:")
     for i in range(len(b)):
         print(float(b[i]))
+        
+def TASKB1():
+    print("This is part B")
+    A=matrix(3,3)
+    data=np.random.rand(3,3)*3
+    A.view_matrix(data)
+    
+    print("A is")
+    A.show()
+    
+    Q,R=qr_gs_decomposition(A)
+    
+    print("Q is")
+    Q.show()
+    
+    print("R is")
+    R.show()
+    
+    B=qr_gs_inverse(Q,R)
+    print("This is A inverse (or B)")
+    B.show()
+    print("AB is equal to")
+    I=multiply_matrix(A,B).show()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
