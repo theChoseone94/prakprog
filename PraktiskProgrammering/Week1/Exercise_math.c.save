@@ -1,0 +1,9 @@
+#include<stdio.h>
+#include<math.h>
+#include<complex.h>
+int main(void){
+	printf("Tgamma(5)=%f\n", tgamma(5));
+	printf("Bessel(0.5)=%f\n",j1(0.5));
+	double complex z1=csqrt(-2);
+	printf("Sqrt(-2)=%.1f+%.1fi\n", creal(z1) +cimag(z1
+}

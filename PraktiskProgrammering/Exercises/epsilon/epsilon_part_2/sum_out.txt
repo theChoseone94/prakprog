@@ -1,0 +1,11 @@
+Sum_up is given as: 15.403683
+Sum_down is given as: 18.807919
+The difference must be in the precision of the float data type.
+So it is not as precise as one might think
+ and the number of digits is not as high
+Does the sum converge as a function of max?
+I tried change max to INT_MAX/3 and INT_MAX/4 and nothing changed
+Sum_up_double is given as: 21.3716
+Sum_down_double is given as: 21.3716
+They are now the same number, which they should be.
+So it must the number of decimal places/precision
