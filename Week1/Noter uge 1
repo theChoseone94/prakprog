@@ -1,7 +1,0 @@
-Uge 1 for praktisk programmering
-Noter
-Make is a great utility for large programs/projects. It reads the recipe of the program and runs it smart. 
-We will use makefiles for our projets in the class.
-
-You should name the makefile "Makefile", with capital M for easy sorting in directories. 
-

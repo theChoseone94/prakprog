@@ -1,0 +1,32 @@
+This is problem B
+A is equal to:
+3.000	1.000	4.000	1.000	
+5.000	9.000	2.000	6.000	
+5.000	3.000	5.000	8.000	
+9.000	7.000	9.000	2.000	
+
+Lowest eigenvalue:
+-5.863	-0.000	-0.000	-0.000	
+-0.000	1.554	-0.000	-0.000	
+-0.000	-0.000	6.431	-0.000	
+-0.000	-0.000	-0.000	16.878	
+
+Highest eigenvalue:
+16.878	0.000	0.000	0.000	
+0.000	6.431	-0.000	-0.000	
+0.000	-0.000	1.554	-0.000	
+0.000	-0.000	-0.000	-5.863	
+
+Testing the time of the execution. 
+ n is the dimension of the matrix 
+ Time_1 is the time for cyclic diagnolization 
+ time_2 is the time for the single eigenvalue 
+ time_3 is the time for all eigenvalues
+n= 2	 time_1=0.0000782110	 time_2=0.0000833360	 time_3=0.0000760030
+n= 3	 time_1=0.0005858160	 time_2=0.0050922820	 time_3=0.0010414770
+n= 4	 time_1=0.0031139560	 time_2=0.0034487510	 time_3=0.0127251280
+n= 5	 time_1=0.0121555590	 time_2=0.0056523150	 time_3=0.0194134200
+n= 6	 time_1=0.0359176450	 time_2=0.3578468850	 time_3=0.0405180750
+n= 7	 time_1=0.0760989810	 time_2=0.0137384520	 time_3=0.0780993950
+n= 8	 time_1=0.1181235760	 time_2=0.0388649150	 time_3=0.1289522950
+n= 9	 time_1=0.2619649560	 time_2=0.0863789130	 time_3=0.1438123080

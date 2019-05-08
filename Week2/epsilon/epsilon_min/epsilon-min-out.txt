@@ -1,3 +1,0 @@
-My min. using while: -2147483648
-My min. using for-loop: -2147483648
-My min. using do-while: -2147483648

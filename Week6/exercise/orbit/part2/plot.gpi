@@ -1,6 +1,0 @@
-set terminal svg background 'white'
-set output "GR_orbit.svg"
-
-plot "out_GR_orbit.txt" index 0 using (1/$2)*sin($1):(1/$2)*cos($1) with line title 'Orbit I' lt rgb "red", \
-'' index 1 using (1/$2)*sin($1):(1/$2)*cos($1) with line title 'Orbit II' lt rgb "blue",\
-'' index 2 using (1/$2)*sin($1):(1/$2)*cos($1) with line title 'Orbit III' lt rgb "black"

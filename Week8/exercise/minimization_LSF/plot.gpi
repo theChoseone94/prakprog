@@ -1,7 +1,0 @@
-set terminal svg background 'white'
-set out "LSF-out.svg"
-set xlabel "Time [s]"
-set ylabel "y"
-
-plot "LSF-out.txt" index 0 with yerr title "Data" ,\
-'' index 1 using 1:2 title "Fit"

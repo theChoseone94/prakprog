@@ -1,3 +1,0 @@
-my max int using while: 2147483647
-max int using for loop: 2147483647
-Max in using do-while: 2147483647

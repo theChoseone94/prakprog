@@ -1,5 +1,0 @@
-set term pdf
-
-set out 'plot.pdf'
-
-plot [0:4] sin(x) with lines title 'sin(x)'
