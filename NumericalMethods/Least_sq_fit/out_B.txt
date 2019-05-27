@@ -1,0 +1,11 @@
+Problem B: Uncertainties of the fitting coefficients 
+
+The functions are: x^2, x and 1 
+
+The fitted parameters are: 
+
+[3.326761524864847, 0.8370377388960426, -15.607310730763693]
+The uncerntainties are: 
+
+[0.00887274095903938, 0.049984582307232926, 0.28290487765537764]
+The fit can be seen in plot_B.pdf
