@@ -1,0 +1,47 @@
+Problem A: solve a system of eqs., the rosenbrock and the Himmelblau eq.
+using the newtonian method with analytic Jacobian
+
+
+The system of equations
+Finished in 8 iterations.
+x is [1.09834684e-05 9.10431168e+00]
+f(x) is [-3.08073851e-05  2.01970116e-07]
+
+
+The Rosenbrock function
+Finished in 359 iterations.
+x is [0.99999922 0.99999842]
+f(x) is [ 1.60725033e-06 -1.58743458e-06]
+
+
+The Himmelblau function
+Finished in 4 iterations.
+x is [-2.81176259  3.37623971]
+f(x) is [2.98872038e-11 1.31554145e-09]
+
+
+Problem B: solve a system of eqs., the rosenbrock and the Himmelblau eq.
+using the newtonian method with numerical Jacobian
+
+
+System of equations
+Finished in 8 iterations.
+x is [1.09834703e-05 9.10430996e+00]
+f(x) is [-3.08217273e-05  2.02158756e-07]
+
+
+The Rosenbrock function
+Finished in 361 iterations.
+x is [0.99999971 0.99999941]
+f(x) is [ 1.47064916e-06 -1.02734610e-06]
+
+
+The Himmelblau function
+Finished in 4 iterations.
+x is [-2.81176259  3.37623971]
+f(x) is [1.38422607e-11 2.67721845e-10]
+
+
+It can be seen that the two ways are similar in # of iterations
+but the value of f(x) is in general smaller with the numerical Jacobian
+than with the analytical Jacobian
