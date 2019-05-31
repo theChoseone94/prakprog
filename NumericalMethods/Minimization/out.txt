@@ -1,0 +1,32 @@
+Minimization with Newton's method
+
+
+The Rosenbrock
+Finished after 609 iterations.
+The minimum of the Rosenbrock function is [1. 1.]
+
+
+The Himmelblau
+Finished after 9 iterations.
+The minimum of the Himmelblau function is [3. 2.]
+
+
+Minimization with the QuasiNewton method
+Finished after 52 iterations.
+The minimum of the Rosenbrock function is [0.9999997 0.9999994]
+
+
+Finished after 12 iterations.
+The minimum of the Himmelblau function is [ 3.58442834 -1.84812653]
+
+
+When comparing the # of iterations, it is clear that the
+that the Quasi-Newton method is much faster.
+For the Rosenbrock is 609 vs. 52 iterations
+and for the Himmelblau it is 9 vs 12.
+It should be noted that the Himmelblau finds another minimum.
+
+
+Decay function
+Finished after 221 iterations.
+The fit from the decay can be seen in decay.pdf

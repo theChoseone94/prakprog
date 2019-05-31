@@ -1,9 +1,9 @@
-all: partA
+all: partAB
 .PHONEY:
 	all
-partA: newton.py qr.py functions.py main.py out_A.txt
+partAB: newton.py qr.py functions.py main.py out.txt
 
-out_A.txt:
+out.txt:
 	python3 main.py >$@
 
 
