@@ -1,4 +1,3 @@
-import math
 import numpy as np
 from functions import *
 from newton import *

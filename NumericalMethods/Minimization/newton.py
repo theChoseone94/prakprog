@@ -1,8 +1,5 @@
 import numpy as np
 from qr import *
-import math
-import sympy as sp
-
 
 def newtonian(func, x_0,eps):
     steps = 0

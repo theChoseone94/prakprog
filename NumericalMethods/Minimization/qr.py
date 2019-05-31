@@ -1,8 +1,4 @@
 import numpy as np
-import math
-import sympy as sy
-from numpy import linalg
-
 
 def qr_gs_decomposition(A):
     
