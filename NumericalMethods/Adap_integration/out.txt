@@ -1,0 +1,59 @@
+The Sqrt(x)
+The recursive integrator gives the result:
+0.6666703093535566
+The number of iterations is 13
+The exact value of the integral is:
+0.6666666666666666
+The error between the results and exact value is 3.6426868900152343e-06
+
+
+The inverse Sqrt(x)
+The recursive integrator gives the result:
+1.9999933267145065
+The number of iterations is 1072
+The exact value of the integral is:
+2
+The error between the results and exact value is 6.673285493530301e-06
+
+
+The ln(x)/sqrt(x)
+The recursive integrator gives the result:
+-3.9999900877465064
+The number of iterations is 1072
+The exact value of the integral is:
+-4
+The error between the results and exact value is 9.912253493560286e-06
+
+
+The function to calculate pi
+The recursive integrator gives the result:
+3.1416001046635023
+The number of iterations is 16
+The exact valye of the integral is:
+3.141592653589793
+The error between the results and exact value is 7.4510737091415535e-06
+
+
+The Clenshaw-Curtis transformation
+
+
+The Sqrt(x)
+The recursive integrator gives the result:
+0.666669215370347
+The number of iterations is 7
+The exact value of the integral is:
+0.6666666666666666
+The error between the results and exact value is 2.5487036803273355e-06
+
+
+The inverse Sqrt(x)
+The recursive integrator gives the result:
+2.0000047494760596
+The number of iterations is 7
+The exact value of the integral is:
+2
+The error between the results and exact value is 4.7494760595512275e-06
+
+
+As it can be seen, the Clenshaw-Curtis is quite faster, than the original method
+and has smaller errors

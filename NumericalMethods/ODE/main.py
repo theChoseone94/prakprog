@@ -4,7 +4,7 @@ from rungekutta import *
 
 def sin(y):
     return np.array([y[1],-y[0]])
-a=0
+a=0 #start point
 b=3*np.pi #end-point
 h=0.01 #step-size
 
@@ -23,13 +23,14 @@ def ProblemA1():
     
 
     plt.figure
-    plt.plot(X_12,[Y_12[i][0] for i in range(len(Y_12))],'b*')
-    plt.plot(X_12,[Y_12[i][1] for i in range(len(Y_12))],'k*')    
-    plt.plot(x,np.sin(x),'r--')
-    plt.plot(x,np.cos(x),'r--')
+    plt.plot(X_12,[Y_12[i][0] for i in range(len(Y_12))],'b*',label='rk_12 on sin(x)')
+    plt.plot(X_12,[Y_12[i][1] for i in range(len(Y_12))],'k*',label='rk_12 on cos(x)')    
+    plt.plot(x,np.sin(x),'r--',label='sin(x)')
+    plt.plot(x,np.cos(x),'r--',label='cos(x)')
     plt.xlabel('x')
     plt.ylabel('y')
     plt.title('rk_12 for sin(x) and cos(x)')
+    plt.legend()
     plt.savefig("outA1.pdf") 
 
     print('Using rk_12 on sin(x) and cos(x) can be seen in outA1.pdf') 
@@ -46,15 +47,15 @@ def ProblemA2():
     (X_34,Y_34)=rk_driver(b,h,sin,x_0,y,rk_34)
     
     plt.figure
-    plt.plot(X_34,[Y_34[i][0] for i in range(len(Y_34))],'b.')
-    plt.plot(X_34,[Y_34[i][1] for i in range(len(Y_34))],'k.')
-    plt.plot(x,np.sin(x),'r--')
-    plt.plot(x,np.cos(x),'r--')
+    plt.plot(X_34,[Y_34[i][0] for i in range(len(Y_34))],'b.',label='rk_34 on sin(x)')
+    plt.plot(X_34,[Y_34[i][1] for i in range(len(Y_34))],'k.',label='rk_34 on cos(x)')
+    plt.plot(x,np.sin(x),'r--',label='sin(x)')
+    plt.plot(x,np.cos(x),'r--',label='cos(x)')
     print('Using rk_34 on sin(x) and cos(x) can be seen in outA2cat.pdf')  
     plt.xlabel('x')
     plt.ylabel('y')
     plt.title('rk_34 for sin(x) and cos(x)')
-
+    plt.legend()
     plt.savefig("outA2.pdf")
     print('\n')
 
