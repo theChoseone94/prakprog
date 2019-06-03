@@ -1,0 +1,19 @@
+Testing the MC integration on the integral sqrt(x) from 0 to 1
+The result from the MC integration is [0.66663118]
+The exact value of the integral is 0.6666666666666666
+The estimated error from the MC-integration is [0.00023552]
+The real error is [-3.54903159e-05]
+
+
+Testing the MC integartion on the integral 1/sqrt(x) from 0 to 1
+The result from the MC integration is [1.99919066]
+The exact value of the integral is 2.0
+The estimated error from the MC-integration is [0.0034595]
+The real error is [-0.00080934]
+
+
+I will now test on the difficult singular integral given in the assignment
+The result from MC-integration is 1.3684054280490658
+The exact value of the integral is 1.393203929685676
+The estimated error from the MC-integral is 0.011724082187274682
+The real error is 0.024798501636610126
