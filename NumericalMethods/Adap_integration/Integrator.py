@@ -43,6 +43,11 @@ def C_C(f, a, b, acc, eps, error):
     def F(t):
         return (f((a + b)/2.0 + (a - b)*np.cos(t)/2.0)*np.sin(t)*(b - a)/2.0) 
     return integrator(F, 0.0, np.pi, acc, eps, error)
+
+
+def infinite_integrator(func,a,b,acc,eps,error):
+    np.isinf(a)
+    np.isinf(b)
     
 
 
