@@ -33,7 +33,7 @@ double Fe(double e, double r){
 	       	gsl_odeiv2_driver_alloc_y_new(&system,gsl_odeiv2_step_rkf45,hstart,epsabs,epsrel);
 
 	double t=r_min;
-	double y[]={t-t*t,1-2*t}; /*r-r^2 and the derivative 1-2*r */
+	double y[2]={t-t*t,1-2*t}; /*r-r^2 and the derivative 1-2*r */
 	int status = gsl_odeiv2_driver_apply(DRIVE,&t,r,y);
 		if(status!=GSL_SUCCESS) fprintf(stderr,"odeiv2 error for Fe is %i \n",status);
 

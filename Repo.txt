@@ -1,0 +1,5 @@
+This is the repository for Hasse Hansen in the course Praktisk Programmering og Numeriske Metoder.
+
+https://github.com/theChoseone94/prakprog
+
+
