@@ -32,6 +32,7 @@ The number of iterations is 16
 The exact valye of the integral is:
 3.141592653589793
 The error between the results and exact value is 7.4510737091415535e-06
+#########################################################################
 
 
 The Clenshaw-Curtis transformation
@@ -57,3 +58,25 @@ The error between the results and exact value is 4.7494760595512275e-06
 
 As it can be seen, the Clenshaw-Curtis is quite faster, than the original method
 and has smaller errors
+#########################################################################
+
+
+Testing the infinite integration on the gaussian integral
+from 0 to inf
+The result from the integral from 0 to inf 0.8862082357659548
+The number of interations is 8
+The exact value of the integral is 0.8862269254527579
+
+
+Testing the infinite integration on the gaussian integral
+from -inf to 0
+The result from the integral from -inf to 0 0.8862082357659548
+The number of interations is 8
+The exact value of the integral is 0.8862269254527579
+
+
+Testing the infinite integration on the gaussian integral
+from -inf to inf
+The result from the integral from -inf to inf 1.7724531496218034
+The number of interations is 10
+The exact value of the integral is 1.7724538509055159

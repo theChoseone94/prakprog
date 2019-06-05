@@ -16,6 +16,9 @@ def ln(x):
 def pi_func(x):
     return 4*np.sqrt(1-(1-x)**2)
 
+def gaussian_func(x):
+    return np.exp(-x**2)
+
 
 a=0
 b=1.0
@@ -71,7 +74,7 @@ def ProblemA():
 
 
 def ProblemB():
-    print('\n')
+    print('#########################################################################')
     print('The Clenshaw-Curtis transformation')
     print('\n')
     print('The Sqrt(x)')
@@ -98,4 +101,38 @@ def ProblemB():
   
     print('As it can be seen, the Clenshaw-Curtis is quite faster, than the original method')
     print('and has smaller errors')
+    
+def ProblemC():
+    print('#########################################################################')
+    print('Testing the infinite integration on the gaussian integral')
+    print('from 0 to inf')
+    
+    result_inf1,steps_inf1=infinite_integrator(gaussian_func,0,np.inf,acc,eps,error)
+    
+    print('The result from the integral from 0 to inf',result_inf1)
+    print('The number of interations is',steps_inf1)
+    print('The exact value of the integral is',np.sqrt(np.pi)/2.0)
+    
+    
+    print('\n')
+    print('Testing the infinite integration on the gaussian integral')
+    print('from -inf to 0')
+    
+    result_inf2,steps_inf2=infinite_integrator(gaussian_func,-np.inf,0,acc,eps,error)
+    
+    print('The result from the integral from -inf to 0',result_inf2)
+    print('The number of interations is',steps_inf2)
+    print('The exact value of the integral is',np.sqrt(np.pi)/2.0)
+    
+    print('\n')
+    print('Testing the infinite integration on the gaussian integral')
+    print('from -inf to inf')
+    
+    result_inf3,steps_inf3=infinite_integrator(gaussian_func,-np.inf,np.inf,acc,eps,error)
+    
+    print('The result from the integral from -inf to inf',result_inf3)
+    print('The number of interations is',steps_inf3)
+    print('The exact value of the integral is',np.sqrt(np.pi))    
+    
+    
     

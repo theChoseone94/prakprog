@@ -46,8 +46,33 @@ def C_C(f, a, b, acc, eps, error):
 
 
 def infinite_integrator(func,a,b,acc,eps,error):
-    np.isinf(a)
-    np.isinf(b)
+    Low=np.isinf(a)
+    Up=np.isinf(b)
+    
+    if (Low == False and Up == False):
+        Q,steps = integrator(func,a,b,acc,eps,error)
+        
+    elif (Low == True and Up == False):
+        def Low_inf(x):
+            return (func(b-(1-x)/x)/x**2)
+        Q,steps = integrator(Low_inf,0,1,acc,eps,error)
+        
+    elif (Low == False and Up == True):
+        def Up_inf(x):
+            return (func(a+(1-x)/x)/x**2)
+        Q,steps = integrator(Up_inf,0,1,acc,eps,error)
+        
+    elif(Low == True and Up == True):
+        def LowUp_inf(x):
+            return (func(x/(1-x**2))*(1+x**2)/(1-x**2)**2)
+        Q,steps = integrator(LowUp_inf, -1, 1, acc,  eps, error)
+        
+    else:
+        print('Error has occured')
+        Q = float('Inf')
+        
+    return Q,steps
+        
     
 
 
