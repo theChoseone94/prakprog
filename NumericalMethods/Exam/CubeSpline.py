@@ -28,8 +28,9 @@ def CS_with_D(x,y,dydx):
     b=np.append(b,(p[n-2]+p[n-3])/2.0) #b[n-2]
     b=np.append(b,p[n-2]) #b[n-1]
     for i in range(2,np.size(x)-1):
-        c[i] = (3*(p[i]) - 2*b[i] - b[i+1])/(h[i])
-        d[i] = (-2*(p[i]) + b[i] + b[i+1])/(h[i])**2
+        c[i] = (3*(p[i]) - 2*b[i] - b[i+1])/(h[i]) #I tried changing the b's in this to dydx, with no change to the end result.
+        d[i] = (-2*(p[i]) + b[i] + b[i+1])/(h[i])**2 #I tried change the b's into dydx, but again no change to the end spline result.
+    
     
     return b,c,d
     
