@@ -15,7 +15,7 @@ def CS_with_D(x,y,dydx):
 
     b=np.append(b,p[0])
     b=np.append(b,(p[0]+p[1])/2.0)
-    #weights
+    #weights from Akimo
     for i in range(2,n-2):
         w1=np.fabs(p[i+1]-p[i])
         w2=np.fabs(p[i-1]-p[i-2])
@@ -35,29 +35,29 @@ def CS_with_D(x,y,dydx):
     return b,c,d
     
 
-def half_int(n, x, z):
+def half_step(n, x, z):
     #finds the point to interpolate over
     it = int(0); # iteration number
-    L = int (0); 
-    R = int(n-1)
+    Left = int (0); 
+    Right = int(n-1)
 
-    if (L > R):
-        print("Error, list must be longer\n")
+    if (Left > Right):
+        print("Error \n")
         return -1
 
-    while (L <= R):
+    while (Left <= Right):
         # Search for the interval in which z belongs
-        m = int((L+R)/2)
+        m = int((Left+Right)/2)
 
         if (x[m] <= z and x[m+1] > z):
             return m
         elif (x[m] < z):
-            L = m + 1
+            Left = m + 1
         elif (x[m] > z):
-            R = m - 1
+            Right = m - 1
         it = it + 1
         if (it > n):
-            print("Search was not succesful.\n")
+            print("Search unsuccesful.\n")
             return -1
             break
  
@@ -68,7 +68,7 @@ def eval_CS(x,y,z,dydx):
     c = CS_with_D(x, y, dydx)[1]
     d = CS_with_D(x, y, dydx)[2]
     
-    m = half_int(n, x, z) # Search
+    m = half_step(n, x, z) # Search
     
     S=(y[m] + b[m]*(z-x[m]) + c[m]*(z-x[m])**2 + d[m]*(z-x[m])**3) #calc
     
