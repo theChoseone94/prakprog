@@ -1,4 +1,5 @@
 import numpy as np
+from Searching import *
 
 
 def CS_with_D(x,y,dydx):
@@ -7,7 +8,7 @@ def CS_with_D(x,y,dydx):
     p=np.zeros(np.size(dydx))
     for i in range(n-1):
         h[i] = x[i+1]-x[i] #step size between points
-        p[i] = (y[i+1]-y[i])/h[i]
+        p[i] = (y[i+1]-y[i])/h[i] #slope
     b=np.array([])
     c=np.zeros(np.size(dydx))
     d=np.zeros(np.size(dydx))
@@ -34,32 +35,6 @@ def CS_with_D(x,y,dydx):
     
     return b,c,d
     
-
-def half_step(n, x, z):
-    #finds the point to interpolate over
-    it = int(0); # iteration number
-    Left = int (0); 
-    Right = int(n-1)
-
-    if (Left > Right):
-        print("Error \n")
-        return -1
-
-    while (Left <= Right):
-        # Search for the interval in which z belongs
-        m = int((Left+Right)/2)
-
-        if (x[m] <= z and x[m+1] > z):
-            return m
-        elif (x[m] < z):
-            Left = m + 1
-        elif (x[m] > z):
-            Right = m - 1
-        it = it + 1
-        if (it > n):
-            print("Search unsuccesful.\n")
-            return -1
-            break
  
 def eval_CS(x,y,z,dydx):
     n = len(x)
@@ -68,30 +43,8 @@ def eval_CS(x,y,z,dydx):
     c = CS_with_D(x, y, dydx)[1]
     d = CS_with_D(x, y, dydx)[2]
     
-    m = half_step(n, x, z) # Search
+    m = BinarySearch(n,x,z) # Searching using the binary search from the Seaching.py used in the Interpolation assignment
     
-    S=(y[m] + b[m]*(z-x[m]) + c[m]*(z-x[m])**2 + d[m]*(z-x[m])**3) #calc
+    S=(y[m] + b[m]*(z-x[m]) + c[m]*(z-x[m])**2 + d[m]*(z-x[m])**3) #calculating S
     
     return S
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-#for i in range(n):
-#    b[0]=p[0]
-#    b[1]=(p[0]+p[1])/2
-#    b[n-1]=p[n-2]
-#    b[n-2]=(p[n-2]+p[n-3])/2
-#    
-#for i in range()
-#    
