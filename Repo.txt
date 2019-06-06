@@ -2,4 +2,8 @@ This is the repository for Hasse Hansen in the course Praktisk Programmering og 
 
 https://github.com/theChoseone94/prakprog
 
+The exam project is under the Numerical Methods folder.
+
+My student number is 201507392
+
 
