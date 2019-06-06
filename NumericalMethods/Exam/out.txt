@@ -1,0 +1,14 @@
+I have tested the cubic-sub spline with sin(x).
+I calculated the slope at each point in the cubic-spline. The residuals of the 
+slope between the calculated one and sin'(x) = cos(x) can be seen beneath here.
+[-0.01812701 -0.01714484  0.03008303  0.02085035  0.00935822 -0.00314803
+ -0.01531314 -0.02581883 -0.03352665  0.00477121  0.00477121 -0.03352665
+ -0.02581883 -0.01531314 -0.00314803  0.00935822  0.02085035  0.03008303
+ -0.01714484 -0.01812701]
+
+
+the mean of the residual
+-0.004801568839441579
+
+
+A figure with the spline interpolation can be seen in Exam.pdf

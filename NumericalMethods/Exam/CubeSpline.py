@@ -8,7 +8,6 @@ def CS_with_D(x,y,dydx):
     for i in range(n-1):
         h[i] = x[i+1]-x[i] #step size between points
         p[i] = (y[i+1]-y[i])/h[i]
-        
     b=np.array([])
     c=np.zeros(np.size(dydx))
     d=np.zeros(np.size(dydx))
@@ -16,7 +15,7 @@ def CS_with_D(x,y,dydx):
 
     b=np.append(b,p[0])
     b=np.append(b,(p[0]+p[1])/2.0)
-    
+    #weights
     for i in range(2,n-2):
         w1=np.fabs(p[i+1]-p[i])
         w2=np.fabs(p[i-1]-p[i-2])
@@ -32,17 +31,46 @@ def CS_with_D(x,y,dydx):
         c[i] = (3*(p[i]) - 2*b[i] - b[i+1])/(h[i])
         d[i] = (-2*(p[i]) + b[i] + b[i+1])/(h[i])**2
     
+    return b,c,d
     
+
+def half_int(n, x, z):
+    #finds the point to interpolate over
+    it = int(0); # iteration number
+    L = int (0); 
+    R = int(n-1)
+
+    if (L > R):
+        print("Error, list must be longer\n")
+        return -1
+
+    while (L <= R):
+        # Search for the interval in which z belongs
+        m = int((L+R)/2)
+
+        if (x[m] <= z and x[m+1] > z):
+            return m
+        elif (x[m] < z):
+            L = m + 1
+        elif (x[m] > z):
+            R = m - 1
+        it = it + 1
+        if (it > n):
+            print("Search was not succesful.\n")
+            return -1
+            break
  
-
-    #calculating S
-    x_p=np.linspace(0,2*np.pi+1,n)
-    S=np.zeros(np.size(dydx))
-    for i in range (np.size(x-1))   :
-        S[i] = y[i] + b[i] * (x_p[i]-x[i]) + c[i]*(x_p[i]-x[i])**2 + d[i]*(x_p[i]-x[i])**3
-
+def eval_CS(x,y,z,dydx):
+    n = len(x)
+    #taking the b,c,d values from before cubic spline
+    b = CS_with_D(x, y, dydx)[0]
+    c = CS_with_D(x, y, dydx)[1]
+    d = CS_with_D(x, y, dydx)[2]
     
-
+    m = half_int(n, x, z) # Search
+    
+    S=(y[m] + b[m]*(z-x[m]) + c[m]*(z-x[m])**2 + d[m]*(z-x[m])**3) #calc
+    
     return S
 
 
