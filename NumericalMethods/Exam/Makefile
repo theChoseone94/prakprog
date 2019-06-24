@@ -7,4 +7,4 @@ out.txt:
 
 
 clean:
-	rm *.txt *.pdf
+	rm -r *.txt *.pdf __pycache__
